@@ -30,7 +30,7 @@ This repository contains a laravel 12 template that comes pre-configured with au
 
 2. Navigate into the project directory:
     ```bash
-    cd laravel11-stisla
+    cd AmalQurban
     ```
 
 3. Install PHP dependencies:
