@@ -1,0 +1,26 @@
+{
+    "sourceFile": "app/Models/kuponumum.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1748614582392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1748616052453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n class Kuponumum extends Model\n {\n     use HasFactory;\n \n-    protected $table = 'kupon_umum'; // nama tabel baru di database\n+    protected $table = 'kuponumums'; // nama tabel baru di database\n \n     protected $fillable = [\n         'no_kupon',\n         'wilayah',\n"
+                },
+                {
+                    "date": 1748620531784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n class Kuponumum extends Model\n {\n     use HasFactory;\n \n-    protected $table = 'kuponumums'; // nama tabel baru di database\n+    protected $table = 'kupon_umum'; // nama tabel baru di database\n \n     protected $fillable = [\n         'no_kupon',\n         'wilayah',\n"
+                }
+            ],
+            "date": 1748614582392,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Models;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass Kuponumum extends Model\n{\n    use HasFactory;\n\n    protected $table = 'kupon_umum'; // nama tabel baru di database\n\n    protected $fillable = [\n        'no_kupon',\n        'wilayah',\n        'jatah',\n        'jenis_daging',\n        'status',\n    ];\n}"
+        }
+    ]
+}

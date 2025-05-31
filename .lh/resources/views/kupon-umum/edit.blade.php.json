@@ -1,0 +1,18 @@
+{
+    "sourceFile": "resources/views/kupon-umum/edit.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1748614714072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1748614714072,
+            "name": "Commit-0",
+            "content": "@extends('layouts.app')\r\n\r\n@section('content')\r\n<div class=\"container\">\r\n    <h2>Edit Kupon Umum</h2>\r\n\r\n    @if ($errors->any())\r\n        <div class=\"alert alert-danger\">\r\n            <strong>Oops!</strong> Ada kesalahan saat input data:<br><br>\r\n            <ul>\r\n                @foreach ($errors->all() as $error)\r\n                    <li>{{ $error }}</li>\r\n                @endforeach\r\n            </ul>\r\n        </div>\r\n    @endif\r\n\r\n    <form action=\"{{ route('kuponumum.update', $kuponumum->id) }}\" method=\"POST\">\r\n        @csrf\r\n        @method('PUT')\r\n\r\n        <div class=\"mb-3\">\r\n            <label for=\"no_kupon\" class=\"form-label  bg-blue-300 text-dark\">No Kupon</label>\r\n            <input type=\"text\" name=\"no_kupon\" class=\"form-control bg-blue-300 text-dark\" value=\"{{ $kuponumum->no_kupon }}\" readonly>\r\n        </div>\r\n\r\n        <div class=\"mb-3\">\r\n            <label for=\"wilayah\" class=\"form-label\">Wilayah</label>\r\n            <input type=\"text\" name=\"wilayah\" class=\"form-control\" value=\"{{ $kuponumum->wilayah }}\" required>\r\n        </div>\r\n\r\n        <div class=\"mb-3\">\r\n            <label for=\"jatah\" class=\"form-label\">Jatah</label>\r\n            <input type=\"text\" name=\"jatah\" class=\"form-control\" value=\"{{ $kuponumum->jatah }}\" required>\r\n        </div>\r\n\r\n        <div class=\"mb-3\">\r\n            <label for=\"jenis_daging\" class=\"form-label\">Jenis Daging</label>\r\n            <select name=\"jenis_daging\" class=\"form-control\" required>\r\n                <option value=\"Sapi\" {{ $kuponumum->jenis_daging == 'Sapi' ? 'selected' : '' }}>Sapi</option>\r\n                <option value=\"Kambing\" {{ $kuponumum->jenis_daging == 'Kambing' ? 'selected' : '' }}>Kambing</option>\r\n            </select>\r\n        </div>\r\n\r\n        <div class=\"mb-3\">\r\n            <label for=\"status\" class=\"form-label\">Status</label>\r\n            <select name=\"status\" class=\"form-control\" required>\r\n                <option value=\"Belum Scan\" {{ $kuponumum->status == 'Belum Scan' ? 'selected' : '' }}>Belum Scan</option>\r\n                <option value=\"Sudah Scan\" {{ $kuponumum->status == 'Sudah Scan' ? 'selected' : '' }}>Sudah Scan</option>\r\n            </select>\r\n        </div>\r\n\r\n        <button type=\"submit\" class=\"btn btn-success\">Update</button>\r\n        <a href=\"{{ route('kuponumum.index') }}\" class=\"btn btn-secondary\">Kembali</a>\r\n    </form>\r\n</div>\r\n@endsection"
+        }
+    ]
+}

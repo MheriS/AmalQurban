@@ -1,0 +1,18 @@
+{
+    "sourceFile": "resources/views/components/footer.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1748621779632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1748621779632,
+            "name": "Commit-0",
+            "content": "<footer class=\"main-footer\">\n    <div class=\"footer-left\">\n        &copy; 2025 HarmonyMan | <a href=\"https://www.vickymaulana.my.id\">My Portofolio</a>\n    </div>\n    <div class=\"footer-right\">\n        1.0.0\n    </div>\n</footer>"
+        }
+    ]
+}

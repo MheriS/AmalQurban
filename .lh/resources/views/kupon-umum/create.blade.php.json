@@ -1,0 +1,18 @@
+{
+    "sourceFile": "resources/views/kupon-umum/create.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1748614691672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1748614691672,
+            "name": "Commit-0",
+            "content": "@extends('layouts.app')\r\n\r\n@section('content')\r\n<div class=\"container\">\r\n    <h4 class=\"mb-4\">Tambah Kupon Umum</h4>\r\n\r\n    @if ($errors->any())\r\n        <div class=\"alert alert-danger\">\r\n            <strong>Oops!</strong> Ada kesalahan saat input data:\r\n            <ul>\r\n                @foreach ($errors->all() as $error)\r\n                    <li>{{ $error }}</li>\r\n                @endforeach\r\n            </ul>\r\n        </div>\r\n    @endif\r\n\r\n    <form action=\"{{ route('kuponumum.store') }}\" method=\"POST\">\r\n        @csrf\r\n\r\n        {{-- Wilayah --}}\r\n        <div class=\"mb-3\">\r\n            <label for=\"wilayah\" class=\"form-label\">Wilayah <span class=\"text-danger\">*</span></label>\r\n            <select name=\"wilayah\" class=\"form-select\" required>\r\n                <option value=\"\">-- Pilih --</option>\r\n                <option value=\"Wilayah 1\">Wilayah 1</option>\r\n                <option value=\"Wilayah 2\">Wilayah 2</option>\r\n                {{-- Tambahkan opsi lainnya sesuai kebutuhan --}}\r\n            </select>\r\n        </div>\r\n\r\n        {{-- Jenis Daging --}}\r\n        <div class=\"mb-3\">\r\n            <label for=\"jenis_daging\" class=\"form-label\">Jenis Daging <span class=\"text-danger\">*</span></label>\r\n            <select name=\"jenis_daging\" class=\"form-select\" required>\r\n                <option value=\"\">-- Pilih --</option>\r\n                <option value=\"Sapi\">Sapi</option>\r\n                <option value=\"Kambing\">Kambing</option>\r\n            </select>\r\n        </div>\r\n\r\n        {{-- Jatah Daging --}}\r\n        <div class=\"mb-3\">\r\n            <label for=\"jatah\" class=\"form-label\">Jatah/Jumlah Daging Per-Kupon <span class=\"text-danger\">*</span></label>\r\n            <div class=\"input-group\">\r\n                <input type=\"text\" name=\"jatah\" class=\"form-control\" placeholder=\"Ketik Jatah. c/ 2\" required>\r\n                <span class=\"input-group-text\">KG</span>\r\n            </div>\r\n        </div>\r\n\r\n        {{-- Jumlah Kupon --}}\r\n        <div class=\"mb-3\">\r\n            <label for=\"jumlah_kupon\" class=\"form-label\">Jumlah Kupon Generate <span class=\"text-danger\">*</span></label>\r\n            <input type=\"number\" name=\"jumlah_kupon\" class=\"form-control\" placeholder=\"Ketik Jumlah Kupon Generate\" required>\r\n        </div>\r\n\r\n        {{-- Checkbox Konfirmasi --}}\r\n        <div class=\"form-check mb-3\">\r\n            <input type=\"checkbox\" name=\"konfirmasi\" class=\"form-check-input\" id=\"konfirmasi\" required>\r\n            <label class=\"form-check-label\" for=\"konfirmasi\">\r\n                Saya yakin sudah mengisi dengan benar.\r\n            </label>\r\n        </div>\r\n\r\n        {{-- Tombol Aksi --}}\r\n        <div class=\"d-flex justify-content-end\">\r\n            <a href=\"{{ route('kuponumum.index') }}\" class=\"btn btn-secondary me-2\">Batal</a>\r\n            <button type=\"submit\" class=\"btn btn-primary\">Simpan</button>\r\n        </div>\r\n    </form>\r\n</div>\r\n@endsection"
+        }
+    ]
+}

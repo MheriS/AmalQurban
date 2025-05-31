@@ -1,0 +1,22 @@
+{
+    "sourceFile": "database/migrations/2025_05_30_140556_create_kuponumums_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1748619087482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1748620236479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n      * Run the migrations.\n      */\n     public function up(): void\n     {\n-        Schema::create('kuponumums', function (Blueprint $table) {\n+        Schema::create('kupon_umum', function (Blueprint $table) {\n             $table->id();\n             $table->string('no_kupon')->unique();\n             $table->string('wilayah');\n             $table->string('jatah'); // bisa juga integer + satuan di tampilan\n"
+                }
+            ],
+            "date": 1748619087482,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     */\n    public function up(): void\n    {\n        Schema::create('kuponumums', function (Blueprint $table) {\n            $table->id();\n            $table->string('no_kupon')->unique();\n            $table->string('wilayah');\n            $table->string('jatah'); // bisa juga integer + satuan di tampilan\n            $table->string('jenis_daging'); // contoh: kambing, sapi\n            $table->enum('status', ['Belum Scan', 'Sudah Scan'])->default('Belum Scan');\n            $table->timestamps();\n        });       \n    }\n\n    /**\n     * Reverse the migrations.\n     */\n    public function down(): void\n    {\n        Schema::dropIfExists('kuponumums');\n    }\n};"
+        }
+    ]
+}

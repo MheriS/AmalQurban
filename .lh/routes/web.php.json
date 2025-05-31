@@ -1,0 +1,26 @@
+{
+    "sourceFile": "routes/web.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1748614830521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1748615203998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,5 +39,6 @@\n \n     // ini yang saya\n     Route::get('/kuponumum/belum-scan', [KuponumumController::class, 'belumScan'])->name('kuponumum.belum');\n     Route::get('/kuponumum/sudah-scan', [KuponumumController::class, 'sudahScan'])->name('kuponumum.sudah');\n+    Route::get('/kuponumum', [KuponUmumController::class, 'index'])->name('kuponumum.index');\n });\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1748615256295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,6 +39,7 @@\n \n     // ini yang saya\n     Route::get('/kuponumum/belum-scan', [KuponumumController::class, 'belumScan'])->name('kuponumum.belum');\n     Route::get('/kuponumum/sudah-scan', [KuponumumController::class, 'sudahScan'])->name('kuponumum.sudah');\n-    Route::get('/kuponumum', [KuponUmumController::class, 'index'])->name('kuponumum.index');\n+    // Route resource untuk Kupon Umum (CRUD)\n+    Route::resource('/kuponumum', KuponumumController::class);\n });\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1748614830521,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Support\\Facades\\Route;\nuse App\\Http\\Controllers\\ProfileController;\nuse App\\Http\\Controllers\\ExampleController;\nuse App\\Http\\Controllers\\KuponumumController;\n\nRoute::get('/', function () {\n    return view('welcome');\n});\n\nAuth::routes();\n\nRoute::middleware(['auth'])->group(function () {\n    Route::get('/home', [App\\Http\\Controllers\\HomeController::class, 'index'])->name('home');\n    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');\n    Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');\n    Route::get('/profile/change-password', [ProfileController::class, 'changepassword'])->name('profile.change-password');\n    Route::put('/profile/password', [ProfileController::class, 'password'])->name('profile.password');\n    Route::get('/blank-page', [App\\Http\\Controllers\\HomeController::class, 'blank'])->name('blank');\n\n    Route::get('/hakakses', [App\\Http\\Controllers\\HakaksesController::class, 'index'])->name('hakakses.index')->middleware('superadmin');\n    Route::get('/hakakses/edit/{id}', [App\\Http\\Controllers\\HakaksesController::class, 'edit'])->name('hakakses.edit')->middleware('superadmin');\n    Route::put('/hakakses/update/{id}', [App\\Http\\Controllers\\HakaksesController::class, 'update'])->name('hakakses.update')->middleware('superadmin');\n    Route::delete('/hakakses/delete/{id}', [App\\Http\\Controllers\\HakaksesController::class, 'destroy'])->name('hakakses.delete')->middleware('superadmin');\n\n    Route::get('/table-example', [App\\Http\\Controllers\\ExampleController::class, 'table'])->name('table.example');\n    Route::get('/clock-example', [App\\Http\\Controllers\\ExampleController::class, 'clock'])->name('clock.example');\n    Route::get('/chart-example', [App\\Http\\Controllers\\ExampleController::class, 'chart'])->name('chart.example');\n    Route::get('/form-example', [App\\Http\\Controllers\\ExampleController::class, 'form'])->name('form.example');\n    Route::get('/map-example', [App\\Http\\Controllers\\ExampleController::class, 'map'])->name('map.example');\n    Route::get('/calendar-example', [App\\Http\\Controllers\\ExampleController::class, 'calendar'])->name('calendar.example');\n    Route::get('/gallery-example', [App\\Http\\Controllers\\ExampleController::class, 'gallery'])->name('gallery.example');\n    Route::get('/todo-example', [App\\Http\\Controllers\\ExampleController::class, 'todo'])->name('todo.example');\n    Route::get('/contact-example', [App\\Http\\Controllers\\ExampleController::class, 'contact'])->name('contact.example');\n    Route::get('/faq-example', [App\\Http\\Controllers\\ExampleController::class, 'faq'])->name('faq.example');\n    Route::get('/news-example', [App\\Http\\Controllers\\ExampleController::class, 'news'])->name('news.example');\n    Route::get('/about-example', [App\\Http\\Controllers\\ExampleController::class, 'about'])->name('about.example');\n\n    // ini yang saya\n    Route::get('/kuponumum/belum-scan', [KuponumumController::class, 'belumScan'])->name('kuponumum.belum');\n    Route::get('/kuponumum/sudah-scan', [KuponumumController::class, 'sudahScan'])->name('kuponumum.sudah');\n});"
+        }
+    ]
+}
